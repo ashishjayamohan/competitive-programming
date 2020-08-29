@@ -1,0 +1,6 @@
+line = input().split()
+c1 = int(line[0])
+c2 = int(line[1])
+c3 = int(line[2])
+ans = max(c1,c2,c3) - min(c1,c2,c3)
+print(str(ans))
