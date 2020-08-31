@@ -1,20 +1,7 @@
 t = int(input())
 answer = []
 def minpoo(c,o, minc, mino):
-    total = 0
-    while(c!=0 and o!=0):
-        if(c==minc and o==mino):
-            return total
-        elif(c-1 >= minc and o-1 >= mino):
-            total += 1
-            c -= 1
-            o -= 1
-        elif(c-1 >= minc):
-            total += 1
-            c -= 1
-        elif(o-1 >= mino):
-            total += 1
-            o -= 1
+    return max(c-minc, o-mino)
 for a in range(t):
     n = int(input())
     line1 = [int(i) for i in input().split()]
