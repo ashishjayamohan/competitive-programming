@@ -6,8 +6,10 @@ for a in range(t):
     b = line[1]
     c = line[2]
     n = line[3]
-    if(n<2*(c-b-a)):
-        answer.append("YES")
+    if(n<2*c-b-a):
+        answer.append("NO")
+    elif((n-2*c+b+a)%3==0):
+        answer.append("Yes")
     else:
         answer.append("NO")
 for b in answer:
