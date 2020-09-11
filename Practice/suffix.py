@@ -1,12 +1,16 @@
-line = input().split()
-answer = []
-n = int(line[0])
-m = int(line[1])
-line = input().split()
-for j in range(m):
-    x = int(input())
-    cur = set(line[x-1:])
-    answer.append(len(cur))
+from collections import deque
 
-for b in answer:
-    print(str(b))
+n,m=map(int,input().split())
+s=list(map(int,input().split()))
+
+ans=deque([0])
+
+dif=[False for i in range(10**5+1)]
+
+for i in range(n-1,-1,-1):
+    if not dif[s[i]]:
+        ans.appendleft(ans[0]+1)
+        dif[s[i]]=True
+    else:
+        ans.appendleft(ans[0])
+print('\n'.join([str(ans[int(input())-1]) for _ in range(m)]))
